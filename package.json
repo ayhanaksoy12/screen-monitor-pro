@@ -1,0 +1,12 @@
+{
+  "name": "screen-monitor-pro",
+  "version": "1.0.0",
+  "description": "Real-time screen monitoring application",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'No build process'",
+    "start": "http-server -p 3000"
+  },
+  "author": "Sizin Adınız",
+  "license": "MIT"
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Monitor Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <!-- Consent Modal -->
+    <div id="consent-modal" class="modal">
+        <div class="modal-content">
+            <h2>📋 İzləmə Razılığı</h2>
+            <div class="consent-text">
+                <p><strong>Saytımız sizin fəaliyyətinizi aşağıdakı məqsədlərlə izləyir:</strong></p>
+                <ul>
+                    <li>✅ Səhifə istifadə statistikası</li>
+                    <li>✅ İstifadəçi davranış təhlili</li>
+                    <li>✅ Sayt təcrübəsini yaxşılaşdırmaq</li>
+                    <li>✅ Təhlükəsizlik monitorinqi</li>
+                </ul>
+                <p class="warning">⚠️ Ekran görüntüləri anonim şəkildə saxlanılır</p>
+            </div>
+            <div class="modal-buttons">
+                <button onclick="acceptTracking()" class="btn btn-success">✅ Qəbul Edirəm</button>
+                <button onclick="rejectTracking()" class="btn btn-danger">❌ Rədd Edirəm</button>
+            </div>
+            <p class="privacy-link">
+                <a href="privacy.html" target="_blank">Məxfilik Siyasətini oxuyun</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <header>
+            <h1>🎯 Screen Monitor Pro</h1>
+            <div id="status-indicator" class="status-offline">
+                ⏳ İzləmə aktiv deyil
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="info-card">
+                    <h3>📊 Sistem Məlumatları</h3>
+                    <div id="system-info"></div>
+                </div>
+
+                <div class="info-card">
+                    <h3>🖱️ Fəaliyyət Statistikası</h3>
+                    <div id="activity-stats">
+                        <p>Kursor hərəkətləri: <span id="mouse-moves">0</span></p>
+                        <p>Kliklər: <span id="click-count">0</span></p>
+                        <p>Səhifədə qalma müddəti: <span id="time-spent">0</span> saniyə</p>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button onclick="startScreenSharing()" class="btn btn-primary">
+                        🎥 Ekran Paylaşımını Başlat
+                    </button>
+                    <button onclick="stopTracking()" class="btn btn-secondary">
+                        ⏹️ İzləməni Dayandır
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
